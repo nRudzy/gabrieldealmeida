@@ -11,18 +11,16 @@ const navigation = [
 export default function MainPage() {
     return (
         <div>
-            <div className="bg-hero-bg bg-no-repeat bg-cover overflow-hidden h-screen">
-                <div id="homepage" className="bg-gray-900 bg-opacity-80 h-full">
+            <div id="homepage" className="bg-hero-bg bg-no-repeat bg-cover overflow-hidden h-screen">
+                <div className="bg-gray-900 bg-opacity-80 h-full">
                     <div className="max-w-7xl mx-auto">
                         <div className="relative z-10 pb-8 sm:pb-16 md:pb-20 lg:w-full lg:pb-28 xl:pb-32">
                             <section
                                 className="flex flex-col align-center items-center justify-center h-screen text-center gap-8">
-                                <div
-                                    className="-mt-24 rounded-full h-48 w-48 flex items-center justify-center bg-yellow-300">
+                                <div className="-mt-24 rounded-full h-48 w-48 flex items-center justify-center bg-yellow-300">
                                     <div className="bg-bg-pp bg-center bg-no-repeat bg-cover rounded-full h-44 w-44"/>
                                 </div>
-                                <div
-                                    className="text-4xl tracking-tight font-extrabold text-white sm:text-4xl md:text-4xl">
+                                <div className="text-4xl tracking-tight font-extrabold text-white sm:text-4xl md:text-4xl">
                                     <span className="text-center uppercase">Bonjour ! Je m'appelle Gabriel DE ALMEIDA - Développeur web.</span>
                                 </div>
                                 <div className="text-2l text-white">
@@ -295,11 +293,35 @@ export default function MainPage() {
                         </div>
 
                         <div className="mt-24 flex gap-14 items-center text-white">
-                            <div className="text-3xl text-left w-1/2 text-justify">
-
+                            <div className="text-3xl text-left w-1/2 text-justify flex gap-6">
+                                <div className="rounded-full h-64 w-64 flex items-center justify-center bg-yellow-300">
+                                    <div className="bg-me-z bg-center bg-no-repeat bg-cover rounded-full h-60 w-60"/>
+                                </div>
+                                <div className="rounded-full h-64 w-64 flex items-center justify-center bg-yellow-300">
+                                    <div className="bg-z bg-center bg-no-repeat bg-cover rounded-full h-60 w-60"/>
+                                </div>
                             </div>
                             <div className="text-3xl text-left w-1/2 text-justify">
+                                Passionné depuis mon enfance par l'automobile et propriétaire d'un véhicule sportif japonais,
+                                je consacre une partie de mon temps libre à étudier la mécanique, photographier mon
+                                véhicule, organiser des sorties sur circuit ainsi qu'à réaliser des partenariats via mon
+                                compte Instagram.
+                            </div>
+                        </div>
 
+                        <div className="mt-24 flex gap-14 items-center text-white">
+                            <div className="text-3xl text-left w-1/2 text-justify">
+                                Egalement passionné d'art, précisément par le dessin d'animés, je consacre une partie
+                                de mon temps à réaliser des dessins afin de perfectionner mon niveau. Le dessin me permet
+                                d'exprimer ma créativité et mes pensées.
+                            </div>
+                            <div className="text-3xl text-left w-1/2 text-justify flex justify-end gap-6">
+                                <div className="rounded-full h-60 w-60 flex items-center justify-center bg-yellow-300">
+                                    <div className="bg-naruto bg-center bg-no-repeat bg-cover rounded-full h-56 w-56"/>
+                                </div>
+                                <div className="rounded-full h-60 w-60 flex items-center justify-center bg-yellow-300">
+                                    <div className="bg-goku bg-center bg-no-repeat bg-cover rounded-full h-56 w-56"/>
+                                </div>
                             </div>
                         </div>
 
