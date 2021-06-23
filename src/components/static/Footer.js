@@ -1,13 +1,22 @@
 import AnchorLink from 'react-anchor-link-smooth-scroll';
 import RudzyLogo from '../../images/rudzy_logo.png';
-
-const navigation = [
-    {name: 'A propos', href: '#about'},
-    {name: 'CV', href: '#cv'},
-    {name: 'Moi', href: '#about-me'},
-];
+import {useTranslation} from "react-i18next";
+import france from '../../images/france.png';
+import england from '../../images/royaume-uni.png'
 
 export default function Footer() {
+    const { t, i18n } = useTranslation();
+
+    const navigation = [
+        {name: t('about'), href: '#about'},
+        {name: t('cv'), href: '#cv'},
+        {name: t('me'), href: '#about-me'},
+    ];
+
+    function changeLocale(lang = 'fr-FR') {
+        i18n.changeLanguage(lang);
+    }
+
     return (
             <div id="footer" className="bg-gray-800 bg-no-repeat bg-cover overflow-hidden">
                 <div className="max-w-7xl mx-auto">
@@ -22,7 +31,7 @@ export default function Footer() {
                                 ))}
                             </div>
                             <div className="flex justify-end gap-6 flex-col mt-6">
-                                <span className="text-white text-center">Copyright © 2021 Rudzy. Tout droit réservé.</span>
+                                <span className="text-white text-center">{t('copyright')}</span>
                                 <div className="flex gap-6 justify-center mt-2">
                                     <a href="https://www.facebook.com/gabriel.vilela.5439087" target="_blank"
                                        rel="noreferrer">
@@ -65,6 +74,14 @@ export default function Footer() {
                                             </g>
                                         </svg>
                                     </a>
+                                    <div className="flex gap-4">
+                                        <button onClick={() => changeLocale()}>
+                                            <img className="w-6 h-6" src={france} alt="france"/>
+                                        </button>
+                                        <button onClick={() => changeLocale('en-US')}>
+                                        <img className="w-6 h-6" src={england} alt="england"/>
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
                         </div>

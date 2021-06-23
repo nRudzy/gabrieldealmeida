@@ -1,78 +1,57 @@
 import CV from "../documents/CV_Gabriel_DEALMEIDA_2020.pdf";
+import {useTranslation} from "react-i18next";
 
 export default function Cv() {
+    const { t, i18n } = useTranslation();
+
+    const experiences = [
+        {job: "Développeur Web Front", job_en: "Front Web Developer", company: 'Zucchetti France (ex. HumanSourcing)', period: '2021', description: '', description_en: ''},
+        {job: "Développeur FullStack", job_en: "Fullstack Developer", company: 'HumanSourcing', period: '2020 - 2021', description: '', description_en: ''},
+        {job: "Stage Développeur FullStack", job_en: "Intern Fullstack Developer", company: 'EDF CNPE Saint-Alban', period: '2018', description: '', description_en: ''},
+    ];
+
+    const educations = [
+        {education: "Master 1 TIW", education_en: "IT Master Degree", school: 'Université Claude Bernard', school_en: 'Claude Bernard University', period: '2019 - 2020', description: '', description_en: ''},
+        {education: "Licence Informatique", education_en: "IT Licence Degree", school: 'Université Claude Bernard', school_en: 'Claude Bernard University', period: '2016 - 2019', description: '', description_en: ''},
+        {education: "Baccalauréat ES", education_en: "High School Diploma in Economy", school: 'Lycée du Parc', school_en: 'Parc High School', period: '2013 - 2016', description: '', description_en: ''},
+    ];
+
     return (
         <div id="cv" className="bg-gray-700 bg-no-repeat bg-cover overflow-hidden min-h-screen">
             <div className="max-w-7xl mx-auto">
                 <section className="py-24 flex flex-col w-full">
-                    <div className="text-center"><span className="bg-yellow-300 px-2">CV</span></div>
-                    <div className="text-center text-4xl text-white capitalize font-bold pt-1">
-                        Un bref résumé de mon CV
-                    </div>
+                    <div className="text-center"><span className="bg-yellow-300 px-2">{t('cv')}</span></div>
+                    <div className="text-center text-4xl text-white capitalize font-bold pt-1">{t('resumeSummary')}</div>
 
                     <div className="mt-24 flex flex-col gap-14 items-center text-white px-4 lg:flex-row">
                         <div className="w-full text-3xl text-left lg:w-1/2 text-justify">
-                            <div className="mb-4 capitalize">Mon expérience</div>
+                            <div className="mb-4 capitalize">{t('myExperience')}</div>
                             <div className="border-l-4 border-yellow-300 divide-y divide-white px-4">
-                                <div className="py-4">
-                                    <p className="text-2xl font-extrabold">Développeur Web Front</p>
-                                    <p className="text-sm">Zucchetti / 2021</p>
-                                    <p className="mt-4 text-sm">Lorem ipsum dolor sit amet, consectetur adipisicing
-                                        elit. A, accusamus ad alias aliquam consequuntur culpa cumque cupiditate et,
-                                        eveniet iusto magni maiores molestiae numquam porro possimus sapiente
-                                        voluptates? Dicta, id.</p>
-                                </div>
-                                <div className="py-4">
-                                    <p className="text-2xl font-extrabold">Développeur FullStack</p>
-                                    <p className="text-sm">HumanSourcing / 2020 - 2021</p>
-                                    <p className="mt-4 text-sm">Lorem ipsum dolor sit amet, consectetur adipisicing
-                                        elit. A, accusamus ad alias aliquam consequuntur culpa cumque cupiditate et,
-                                        eveniet iusto magni maiores molestiae numquam porro possimus sapiente
-                                        voluptates? Dicta, id.</p>
-                                </div>
-                                <div className="py-4">
-                                    <p className="text-2xl font-extrabold">Stage Développeur FullStack</p>
-                                    <p className="text-sm">EDF CNPE Saint-Alban / 2018 - 2019</p>
-                                    <p className="mt-4 text-sm">Lorem ipsum dolor sit amet, consectetur adipisicing
-                                        elit. A, accusamus ad alias aliquam consequuntur culpa cumque cupiditate et,
-                                        eveniet iusto magni maiores molestiae numquam porro possimus sapiente
-                                        voluptates? Dicta, id.</p>
-                                </div>
+                                {experiences.map((item) => (
+                                    <div className="py-4">
+                                        <p className="text-2xl font-extrabold">{i18n.language === 'fr-FR' ? item.job : item.job_en}</p>
+                                        <p className="text-sm">{item.company} / {item.period}</p>
+                                        <p className="mt-4 text-sm">{i18n.language === 'fr-FR' ? item.description : item.description_en}</p>
+                                    </div>
+                                ))}
                             </div>
                         </div>
                         <div className="w-full text-3xl text-left lg:w-1/2 text-justify">
-                            <div className="mb-4 capitalize">Ma formation</div>
+                            <div className="mb-4 capitalize">{t('myFormation')}</div>
                             <div className="border-l-4 border-yellow-300 divide-y divide-white px-4">
-                                <div className="py-4">
-                                    <p className="text-2xl font-extrabold">Master 1 TIW</p>
-                                    <p className="text-sm">Université Claude Bernard / 2019 - 2020</p>
-                                    <p className="mt-4 text-sm">Lorem ipsum dolor sit amet, consectetur adipisicing
-                                        elit. A, accusamus ad alias aliquam consequuntur culpa cumque cupiditate et,
-                                        eveniet iusto magni maiores molestiae numquam porro possimus sapiente
-                                        voluptates? Dicta, id.</p>
-                                </div>
-                                <div className="py-4">
-                                    <p className="text-2xl font-extrabold">Licence Informatique</p>
-                                    <p className="text-sm">Université Claude Bernard / 2016 - 2019</p>
-                                    <p className="mt-4 text-sm">Lorem ipsum dolor sit amet, consectetur adipisicing
-                                        elit. A, accusamus ad alias aliquam consequuntur culpa cumque cupiditate et,
-                                        eveniet iusto magni maiores molestiae numquam porro possimus sapiente
-                                        voluptates? Dicta, id.</p>
-                                </div>
-                                <div className="py-4">
-                                    <p className="text-2xl font-extrabold">Baccalauréat ES</p>
-                                    <p className="text-sm">Lycée du Parc / 2013 - 2016</p>
-                                    <p className="mt-4 text-sm">Lorem ipsum dolor sit amet, consectetur adipisicing
-                                        elit. A, accusamus ad alias aliquam consequuntur culpa cumque cupiditate et,
-                                        eveniet iusto magni maiores molestiae numquam porro possimus sapiente
-                                        voluptates? Dicta, id.</p>
-                                </div>
+                                {educations.map((item) => (
+                                    <div className="py-4">
+                                        <p className="text-2xl font-extrabold">{i18n.language === 'fr-FR' ? item.education : item.education_en}</p>
+                                        <p className="text-sm">{i18n.language === 'fr-FR' ? item.school : item.school_en} / {item.period}</p>
+                                        <p className="mt-4 text-sm">{i18n.language === 'fr-FR' ? item.description : item.description_en}</p>
+                                    </div>
+                                ))}
                             </div>
                         </div>
                     </div>
 
                     <div className="mt-24 flex flex-col gap-2 items-center text-white px-4">
-                        <div className="text-3xl text-left mb-4 capitalize w-full">Mes compétences</div>
+                        <div className="text-3xl text-left mb-4 capitalize w-full">{t('mySkills')}</div>
                         <div className="w-full flex flex-col gap-8 sm:gap-14 sm:flex-row">
                             <div className="w-full text-3xl text-left sm:w-1/2 text-justify">
                                 <div>
@@ -191,7 +170,7 @@ export default function Cv() {
 
                     <div className="mt-24 flex gap-14 items-center justify-center">
                         <a href={CV} className="bg-yellow-300 hover:bg-yellow-400 p-4" download>
-                            Téléchargez mon CV
+                            {t('downloadMyResume')}
                         </a>
                     </div>
                 </section>

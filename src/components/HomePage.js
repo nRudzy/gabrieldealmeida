@@ -1,6 +1,9 @@
 import AnchorLink from "react-anchor-link-smooth-scroll";
+import { useTranslation } from 'react-i18next';
 
 export default function HomePage() {
+    const { t } = useTranslation();
+
     return (
         <div id="homepage" className="bg-hero-bg bg-no-repeat bg-cover overflow-hidden h-screen">
             <div className="bg-gray-900 bg-opacity-80 h-full">
@@ -12,13 +15,13 @@ export default function HomePage() {
                                 <div className="bg-bg-pp bg-center bg-no-repeat bg-cover rounded-full h-44 w-44"/>
                             </div>
                             <div className="text-4xl tracking-tight font-extrabold text-white sm:text-4xl md:text-4xl">
-                                <span className="text-center uppercase">Bonjour ! Je m'appelle Gabriel DE ALMEIDA - Développeur web.</span>
+                                <span className="text-center uppercase">{t('hello')}.</span>
                             </div>
                             <div className="text-2l text-white">
-                                <span className="text-center">situé à Lyon, France.</span>
+                                <span className="text-center">{t('basedInLyon')}</span>
                             </div>
                             <AnchorLink href="#about" className="mt-20 bg-yellow-300 hover:bg-yellow-400 p-4">
-                                A propos de moi
+                                {t('aboutMe')}
                             </AnchorLink>
                         </section>
                     </div>
