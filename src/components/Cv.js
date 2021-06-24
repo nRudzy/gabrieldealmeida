@@ -6,7 +6,7 @@ export default function Cv() {
 
     const experiences = [
         {job: "Développeur Web Front", job_en: "Front Web Developer", company: 'Zucchetti France (ex. HumanSourcing)', period: '2021', description: '', description_en: ''},
-        {job: "Développeur FullStack", job_en: "Fullstack Developer", company: 'HumanSourcing', period: '2020 - 2021', description: '', description_en: ''},
+        {job: "Développeur FullStack", job_en: "Fullstack Web Developer", company: 'HumanSourcing', period: '2020 - 2021', description: '', description_en: ''},
         {job: "Stage Développeur FullStack", job_en: "Intern Fullstack Developer", company: 'EDF CNPE Saint-Alban', period: '2018', description: '', description_en: ''},
     ];
 
